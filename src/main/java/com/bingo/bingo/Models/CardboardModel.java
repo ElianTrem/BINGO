@@ -18,10 +18,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Cardboards")
+@Table(name = "\"Cardboards\"")
 @Setter @Getter @NoArgsConstructor
 public class CardboardModel {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cardboard_id")
@@ -32,7 +31,5 @@ public class CardboardModel {
     private TicketModel ticket;
 
     @OneToMany(mappedBy = "cardboard", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CardboardCellModel> cardboardCells = new ArrayList<>(); 
-
-    
+    private List<CardboardCellModel> cardboardCells = new ArrayList<>();
 }

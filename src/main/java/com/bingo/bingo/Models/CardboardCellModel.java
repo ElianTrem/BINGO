@@ -13,10 +13,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "CardboardCells")
+@Table(name = "\"CardboardCells\"")
 @Setter @Getter @NoArgsConstructor
 public class CardboardCellModel {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cell_id")
@@ -34,3 +33,4 @@ public class CardboardCellModel {
 
     private Integer number;
 }
+
