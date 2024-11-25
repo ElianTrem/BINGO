@@ -2,6 +2,8 @@ package com.bingo.bingo.Models;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "NumbersDrawn")
+@Table(name = "\"NumbersDrawn\"")
 @Setter @Getter @NoArgsConstructor
 public class NumberDrawnModel {
 
@@ -24,6 +26,7 @@ public class NumberDrawnModel {
     @Column(name = "number_id")
     private int number_id;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "game_id", nullable = false)
     private GameModel game;

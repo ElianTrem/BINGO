@@ -7,4 +7,5 @@ import com.bingo.bingo.Models.UserModel;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserModel, Integer> {
+    UserModel findByEmail(String email);
 }

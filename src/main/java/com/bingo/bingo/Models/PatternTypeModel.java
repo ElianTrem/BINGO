@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "PatternTypes")
+@Table(name = "\"PatternTypes\"")
 @Setter @Getter @NoArgsConstructor
 public class PatternTypeModel {
 
@@ -26,6 +26,6 @@ public class PatternTypeModel {
     @Column(name = "description")
     private String description;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "static")
     private boolean staticPattern;
 }

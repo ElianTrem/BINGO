@@ -3,6 +3,8 @@ package com.bingo.bingo.Models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,7 +18,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Roles")
+@Table(name = "\"Roles\"")
 @Setter @Getter @NoArgsConstructor
 public class RoleModel {
 
@@ -27,6 +29,8 @@ public class RoleModel {
 
     private String role_name;
 
+
+    @JsonManagedReference
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserModel> users = new ArrayList<>();
 }

@@ -2,6 +2,8 @@ package com.bingo.bingo.Models;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "ValidationLogs")
+@Table(name = "\"ValidationLogs\"")
 @Setter @Getter @NoArgsConstructor
 public class ValidationLogModel {
 
@@ -24,10 +26,12 @@ public class ValidationLogModel {
     @Column(name = "log_id")
     private int log_id;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "admin_id", nullable = false)
     private UserModel admin;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "winner_id", nullable = false)
     private WinnerModel winner;

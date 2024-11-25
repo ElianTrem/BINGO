@@ -1,5 +1,7 @@
 package com.bingo.bingo.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +24,7 @@ public class WinningPatternModel {
     @Column(name = "cell_id")
     private int cell_id;
 
-
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "pattern_type_id", nullable = false)
     private PatternTypeModel patternType; 
